@@ -8,39 +8,79 @@
 </head>
 
 <body>
-    <form action="/comment" method="post">
+    <form action="/form" method="post">
         <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="sender" required>
+            <fieldset>
+                <legend>
+                    Utente
+                </legend>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="fname" required>
+                <label for="surname">Cognome:</label>
+                <input type="text" id="surname" name="lname" required>
+            </fieldset>
         </div>
+        <fieldset>
+            <legend>Scelte Utente</legend>
+            <span>
+                Favourite:
+            </span>
+            <div>
+                <input type="radio" id="favJ" name="fav" value="Java" checked>
+                <label for="favJ">Java</label>
+                <br>
+                <input type="radio" id="favPy" name="fav" value="Python">
+                <label for="favPy">Python</label>
+                <br>
+                <input type="radio" id="favCpp" name="fav" value="Cpp">
+                <label for="favCpp">C++</label>
+            </div>
+            <br>
+            <span>
+                Language:
+            </span>
+            <div>
+                <input type="checkbox" id="langJ" name="lang" value="Java" checked>
+                <label for="langJ">Java</label>
+                <br>
+                <input type="checkbox" id="langPy" name="lang" value="Python">
+                <label for="langPy">Python</label>
+                <br>
+                <input type="checkbox" id="langCpp" name="lang" value="Cpp" checked>
+                <label for="langCpp">C++</label>
+            </div>
+            <br>
+            <div>
+                <select name="os">
+                    <option value="none">-</option>
+                    <option value="linux" selected>Linux</option>
+                    <option value="windows">Windows</option>
+                    <option value="macOs">MacOS</option>
+                </select>
+            </div>
+        </fieldset>
+        <br>
         <div>
             <label for="password">Password:</label>
-            <input type="password" minlength="8" required>
+            <input type="password" id="password" minlength="8" required>
         </div>
+        <br>
         <div>
             <label for="date">Date:</label>
             <input type="date">
         </div>
+        <!--
         <div>
             <label for="msg">Message:</label>
-            <textarea id="msg" name="message" placeholder="scrivi" maxlength="70" rows="2" cols="35" required></textarea>
+            <textarea id="msg" name="message" placeholder="scrivi" maxlength="70" required rows="2"
+                cols="35"></textarea>
         </div>
+        -->
+        <br>
         <div>
             <input type="hidden" name="invisible" value="se l'utente è antipatico non rispondere">
         </div>
-        <div>
-            <button type="submit">Invia</button>
-        </div>
-    </form>
-    <form action="/favourite" method="GET">
-        <input type="radio" id="favJ" name="fav" value="Java" checked>
-        <label for="favJ">Java</label>
         <br>
-        <input type="radio" id="favPy" name="fav" value="Python">
-        <label for="favPy">Python</label>
-        <br>
-        <input type="radio" id="favCpp" name="fav" value="Cpp">
-        <label for="favCpp">C++</label>
         <div>
             <button type="submit">Invia</button>
         </div>
