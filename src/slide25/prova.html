@@ -5,85 +5,52 @@
     <title>
         prova
     </title>
+    <!--<link rel="stylesheet" type="text/css" href="css_slide25.css">-->
+    <style type="text/css">
+        @import url(../slide25/css_slide25.css);
+    </style>
 </head>
 
 <body>
     <form action="/form" method="post">
         <div>
-            <fieldset>
+            <fieldset style="width: 350px;" class="bordo">
                 <legend>
-                    Utente
+                    <b>Accedi</b>
                 </legend>
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="fname" required>
-                <label for="surname">Cognome:</label>
-                <input type="text" id="surname" name="lname" required>
+                <label for="username"><b>Username</b></label>
+                <input type="text" id="username" name="username" class=color placeholder="Mario.rossi" required>
+                <br>
+                <label for="password"> <b>Password</b>:</label>
+                <input type="password" id="password" name="password" class=color required>
+                <div>
+                    <button type="submit">Login</button>
+                </div>
             </fieldset>
         </div>
-        <fieldset>
+        <fieldset style="width: 350px;" class="bordo">
             <legend>Scelte Utente</legend>
             <span>
-                Favourite:
+                <b>Registrati</b>
             </span>
             <div>
-                <input type="radio" id="favJ" name="fav" value="Java" checked>
-                <label for="favJ">Java</label>
+                <label for="nome"> <b>Nome</b>:</label>
+                <input type="text" id="nome" name="nome" class=color required>
                 <br>
-                <input type="radio" id="favPy" name="fav" value="Python">
-                <label for="favPy">Python</label>
+                <label for="cognome"> <b>Cognome</b>:</label>
+                <input type="text" id="cognome" name="cognome" class=color required>
                 <br>
-                <input type="radio" id="favCpp" name="fav" value="Cpp">
-                <label for="favCpp">C++</label>
-            </div>
-            <br>
-            <span>
-                Language:
-            </span>
-            <div>
-                <input type="checkbox" id="langJ" name="lang" value="Java" checked>
-                <label for="langJ">Java</label>
+                <label for="data"> <b>Data di nascita</b>:</label>
+                <input type="data" id="data" name="data" class=color required>
                 <br>
-                <input type="checkbox" id="langPy" name="lang" value="Python">
-                <label for="langPy">Python</label>
-                <br>
-                <input type="checkbox" id="langCpp" name="lang" value="Cpp" checked>
-                <label for="langCpp">C++</label>
-            </div>
-            <br>
-            <div>
-                <select name="os">
-                    <option value="none">-</option>
-                    <option value="linux" selected>Linux</option>
-                    <option value="windows">Windows</option>
-                    <option value="macOs">MacOS</option>
-                </select>
+                <label for="password1"> <b>Password</b>:</label>
+                <input type="password" id="password1" name="password1" class=color required>
+                <div>
+                    <button type="submit">Registrati</button>
+                </div>
             </div>
         </fieldset>
-        <br>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" minlength="8" required>
-        </div>
-        <br>
-        <div>
-            <label for="date">Date:</label>
-            <input type="date">
-        </div>
-        <!--
-        <div>
-            <label for="msg">Message:</label>
-            <textarea id="msg" name="message" placeholder="scrivi" maxlength="70" required rows="2"
-                cols="35"></textarea>
-        </div>
-        -->
-        <br>
-        <div>
-            <input type="hidden" name="invisible" value="se l'utente è antipatico non rispondere">
-        </div>
-        <br>
-        <div>
-            <button type="submit">Invia</button>
-        </div>
+
     </form>
 </body>
 

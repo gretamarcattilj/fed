@@ -1,0 +1,11 @@
+legend {color: goldenrod;
+align-items: center}
+.color {background-color: rgb(245, 209, 156);}
+button {background-color: rgb(245, 209, 156);}
+body {font-family: "Courier New", Courier, monospace}
+body {background-image: url("festaRed.jpg"); 
+    background-repeat: no-repeat; }
+fieldset {background-color: transparent; 
+    background-position: center;}
+div {align-items: center;}
+.bordo {border-color: black;}
