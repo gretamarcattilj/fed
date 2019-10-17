@@ -1,11 +1,16 @@
 legend {color: goldenrod;
 align-items: center}
-.color {background-color: rgb(245, 209, 156);}
-button {background-color: rgb(245, 209, 156);}
+.color {background-color: rgb(238, 192, 76);
+border: 1px solid black;}
+button {background-color: goldenrod;}
 body {font-family: "Courier New", Courier, monospace}
 body {background-image: url("festaRed.jpg"); 
     background-repeat: no-repeat; }
 fieldset {background-color: transparent; 
     background-position: center;}
 div {align-items: center;}
-.bordo {border-color: black;}
+.bordo {border: 1px solid black;
+border-collapse: collapse;}
+.button {border: 2px solid black;}
+label {font-size: 12pt}
+/*input:hover{color: navy}*/
