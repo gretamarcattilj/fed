@@ -1,12 +1,15 @@
 legend {color: goldenrod;
 align-items: center}
+.leg {font-weight: bold !important;
+font-size: 110%;}
 .color {background-color: rgb(238, 192, 76);
 border: 1px solid black;}
 button {background-color: goldenrod;}
 body {font-family: "Courier New", Courier, monospace}
-body {background-image: url("festaRed.jpg"); 
+body {background-image: url("festa.jpg");
+    background-size: cover; 
     background-repeat: no-repeat; }
-fieldset {background-color: transparent; 
+fieldset {background-color: rgba(238, 192, 76, 0.2); 
     background-position: center;}
 div {align-items: center;}
 .bordo {border: 1px solid black;
