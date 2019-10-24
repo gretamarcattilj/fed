@@ -6,7 +6,7 @@ function digitSum(num) {
     }
     return sum;
 }
-console.log(digitSum(1856743));
+console.log(digitSum(1856743)===34);
 
 function digitSumNigel(num) {
     num = num.toString();
@@ -18,4 +18,4 @@ function digitSumNigel(num) {
     }
     return sum;
 }
-console.log(digitSumNigel(1856743));
+console.log(digitSumNigel(1856743)===34);
