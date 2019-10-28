@@ -48,7 +48,7 @@ function findPositionLast(data, value) {
     return ind;
 }
 
-console.log("prossimo esercizio")
+console.log("esercizio successivo")
 console.log(findPositionLast([NaN, 1], NaN) === 0); //0
 console.log(findPositionLast([NaN, 1, NaN, NaN], NaN) === 3); //3
 console.log(findPositionLast([NaN, 1], 1) === 1); //1
