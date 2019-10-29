@@ -1,16 +1,14 @@
 function merge(left, right) {
-    result = "";
-
-    for (let i = 0; i < left.length; i++) {
-        for (let j = 0; j < right.length; j++) {
-            if (left[i] <= right[j]) {
-                result = left[i] + result;
-            } else {
-                result = right[j] + result;
-            }
+    let result = [];
+    for (let i = 0, j = 0; i < left.length, j < right.length;) {
+        if (left[i] < right[j]) {
+            result.push(left[i]);
+            i++;
+        } else {
+            result.push(right[j]);
+            j++;
         }
     }
-    result = Array.from(result);
     return result;
 }
 
