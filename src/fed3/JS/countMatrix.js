@@ -11,11 +11,10 @@ function countMatrixRow(matrix) {
 
 function countMatrixCol(matrix) {
     let sum = [];
+    for (let j = 0; j < matrix[0].length; j++)
+        sum[j] = 0;
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[i].length; j++) {
-            if(i===0){
-                sum[j]=0;
-            }
             sum[j] += matrix[i][j];
         }
     }
@@ -30,5 +29,4 @@ let matrice = [
 
 console.log(countMatrixRow(matrice));
 console.log(countMatrixCol(matrice));
-
 
