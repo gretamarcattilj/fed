@@ -2,15 +2,15 @@ function getSingleSort(data) {
     data.sort(
         (a, b) => {
             if (a > b) {
-                return -1;
-            } else if (a < b) {
                 return 1;
+            } else if (a < b) {
+                return -1;
             } else {
                 return 0;
             }
         }
     );
-    for (let i = 0; i < data.length; i + 2) {
+    for (let i = 0; i < data.length; i += 2) {
         if (data[i] === data[i + 1]) {
             continue;
         } else {
@@ -34,3 +34,5 @@ function getSingle(data) {
 }
 
 console.log(getSingleSort([1, 2, 4, 3, 5, 2, 5, 3, 6, 4, 1]));
+console.log(getSingleSort([1, 6, 2, 4, 6, 4, 1]));
+
