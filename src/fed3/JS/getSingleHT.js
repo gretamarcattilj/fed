@@ -1,5 +1,5 @@
 function getSingleHT(data) {
-    ht = {};
+    let ht = {};
     for (let i = 0; i < data.length; i++) {
         if (ht[data[i]] === undefined) {
             ht[data[i]] = 1;
