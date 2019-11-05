@@ -9,24 +9,30 @@
 </head>
 
 <body>
-    <h1>Hello</h1>
+    <h1 id="target" onmouseover="zoomText()" onmouseout="deZoomText()"></h1>
     <form action="action" onsubmit="return check();">
         <input id="user">
         <button>OK</button>
     </form>
+    <br>
     <input id="colore">
     <button onclick="changeBKcolor();">
         SCEGLI
     </button>
-    <select name="sceltacolore" id="sceltacolore" onclick="scelta">
+    <br>
+    <br>
+    <select name="sceltacolore" id="sceltacolore" onchange="changeColorSelect()">
         <option value="red">red</option>
         <option value="blue">blue</option>
-        <option value="darkred">darkred</option>
-        <option value="lightblue">lightblue</option>
+        <option value="green">green</option>
         <option value="gold">gold</option>
-        <option value="silver">silver</option>
-
     </select>
+    <br>
+    <br>
+    <textarea id="testo" placeholder="scrivi qui la tua storia" onfocus="impostazioniIn()" onblur="impostazioniOut()"></textarea>
+    <br>
+    <br>
+    <img src="../fed1/img/gattociccio.jpg" id="immagine" onmouseover="sopraImm()" onmouseout="fuoriImm()">
 </body>
 
 </html>
