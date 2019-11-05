@@ -1,0 +1,11 @@
+{
+    "name": "Amedeo",
+    "job": {
+        "title":"mangiatore di",
+        "cibi": [
+            "pesce",
+            "carne",
+            "cibo per gatti"
+        ]
+    }
+}

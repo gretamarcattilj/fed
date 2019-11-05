@@ -1,0 +1,3 @@
+name=Amedeo, job=mangiatore di, cibi=pesce, cibi=carne, cibi=cibo per gatti
+           
+            

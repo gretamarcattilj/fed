@@ -79,3 +79,36 @@ function zoomText() {
 function deZoomText() {
     document.getElementById('target').style.fontSize = "50px";
 }
+
+function getInfo() {
+    let request = new XMLHttpRequest();
+    request.onload = callback;
+    request.open("GET", "info.txt");
+    request.send();
+}
+
+function callback() {
+    let target = document.getElementById("testo");
+    if (this.status != 200) {
+        target.value = this.status + "\n";
+        return;
+    }
+    let result = "";
+    let inizio = 0;
+    let fine = 0;
+    let resp = this.responseText;
+    for (let i = 0; i < resp.length; i++) {
+        if (resp[i] === "=") {
+            inizio = i;
+        } else if (resp[i] === ",") {
+            fine = i;
+            result += resp.slice(inizio + 1, fine);
+            result += " ";
+            inizio = 0;
+            fine = 0;
+        } else if (i === resp.length - 1) {
+            result += resp.substr(inizio + 1, resp.length - inizio);
+        }
+    }
+    target.value = result;
+}
