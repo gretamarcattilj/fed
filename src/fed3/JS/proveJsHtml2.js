@@ -82,7 +82,7 @@ function deZoomText() {
 
 function getInfo() {
     let request = new XMLHttpRequest();
-    request.onload = callback;
+    request.onload = callbackNew;
     request.open("GET", "info.txt");
     request.send();
 }
@@ -111,4 +111,34 @@ function callback() {
         }
     }
     target.value = result;
+}
+
+function callbackNew() {
+    let target = document.getElementById("testo");
+    if (this.status != 200) {
+        target.value = this.status + "\n";
+        return;
+    }
+    let json = {};
+    let aux = [];
+    let resp = this.responseText;
+    resp = resp.split(",");
+    for (let i = 0; i < resp.length; i++) {
+        aux = resp[i].split("=");
+        if (!json[aux[0]]) {
+            json[aux[0]] = aux[1];
+        } else {
+            if (typeof (Array.isArray(json[aux[0]]))) {
+                let x = [];
+                x.push(json[aux[0]]);
+                x.push(aux[1]);
+                json[aux[0]] = x;
+            } else {
+                json[aux[0]].push(aux[1]);
+            }
+        }
+    }
+    target.value += json.name + "\n";
+    target.value += json.job + "\n";
+    target.value += json.cibi + "\n";
 }
