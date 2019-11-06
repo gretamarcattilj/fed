@@ -128,7 +128,7 @@ function callbackNew() {
         if (!json[aux[0]]) {
             json[aux[0]] = aux[1];
         } else {
-            if (typeof (Array.isArray(json[aux[0]]))) {
+            if (!Array.isArray(json[aux[0]])) {
                 let x = [];
                 x.push(json[aux[0]]);
                 x.push(aux[1]);

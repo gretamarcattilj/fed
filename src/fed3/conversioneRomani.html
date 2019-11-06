@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello</title>
+    <meta charset="utf-8">
+    <script src="JS/conversioneRomans.js">
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/conversioneRomani.css">
+</head>
+
+<body>
+    <div id="contenitore">
+        <h1 id="target">CONVERSIONE IN NUMERI ROMANI</h1>
+        <label for="value">Inserisci il numero che vuoi convertire (1-3999)</label>
+        <br>
+        <br>
+        <input id="value" type="number" required min=1 max=3999>
+        <button class="submit bottoni btn btn-warning" onclick="giveInfo();">
+            CONVERTI
+        </button>
+        <br>
+        <br>
+        <input id="risultato" readonly>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+body {background-image: url("../img/romaniGuerra.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;}
+#contenitore {text-align: center;
+background-color: rgba(256, 228, 196, 0.3);
+margin-left: 20%;
+margin-right: 20%;
+margin-top: 7%;
+margin-top: 7%;
+padding: 5%;}
+h1 {font-weight: bold;}
+.bottoni {
+    font-weight: bold;
+    background-color: rgb(256, 228, 196);
+    border-color: rgb(256, 228, 196);
+}
