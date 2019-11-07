@@ -8,29 +8,55 @@
     <script src="../JS/proveJquery.js">
     </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/provaJquery.css">
 </head>
 
 <body>
     <div id="contenitore">
         <h1 id="target">HELLO</h1>
         <label for="nome">Nome</label>
-        <input id="nome" type="text">
+        <input id="nome" class="red" type="text">
         <br>
         <label for="cognome">Cognome</label>
-        <input id="cognome" type="text">
+        <input id="cognome" class="red" type="text">
     </div>
     <br>
     <div>
         <textarea id="testo"></textarea>
     </div>
     <div>
-        <p>
-            Il numero di div in questa pagina è <span id="valore"></span>
-        </p>
+        <input id="storia" class="red" type="text" placeholder="raccontami la tua stroia">
+        <p id="texto"></p>
+        <button class="submit bottoni btn btn-warning" onclick="mostra();">
+            mostra
+        </button>
+        <br><br>
+        <button class="submit bottoni btn btn-warning" onclick="decr();">
+            decrementa
+        </button>
+        <button class="submit bottoni btn btn-warning" onclick="incr();">
+            incrementa
+        </button>
+        <button class="submit bottoni btn btn-warning" onclick="minusc();">
+            minuscolo
+        </button>
+        <button class="submit bottoni btn btn-warning" onclick="maiusc();">
+            MAIUSCOLO
+        </button>
+        <br>
+        <br>
+        <a href="http://www.google.it">vai alla home page di google</a>
     </div>
+    <br>
     <div>
         <button class="submit bottoni btn btn-warning" onclick="fillContenitore();">
             aggiungi selezione
+        </button>
+    </div>
+    <br>
+    <div>
+        <button class="submit bottoni btn btn-warning" onclick="cambiaColore()">
+            cambia colore input
         </button>
     </div>
 </body>
