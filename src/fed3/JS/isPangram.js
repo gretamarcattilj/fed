@@ -5,7 +5,7 @@ function isPangram(str) {
     if (str.length < 21) {
         return false;
     }
-    let aux = "abcdefghilmnopqrstuvz"
+    let aux = "abcdefghijklmnopqrstuvwxyz"
     let indAux = 0;
     for (let i = 0; i < str.length; i++) {
         indAux = aux.indexOf(str[i].toLowerCase());
@@ -23,9 +23,8 @@ function isPangram(str) {
     return true;
 }
 
-console.log(isPangram("Qui gli ampi stronzi, bove, defechi?")===true);
+console.log(isPangram("The quick brown fox jumps over the lazy dog")===true);
 console.log(isPangram("i topi non avevano nipoti")===false);
-console.log(isPangram("Pranzo d'acqua fa volti sghembi")===true);
 console.log(isPangram("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")===false);
 console.log(isPangram(56)===undefined);
 console.log(isPangram(true)===undefined);
