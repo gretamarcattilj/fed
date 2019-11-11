@@ -1,4 +1,4 @@
-class FurredAnimals {
+class FurredAnimal2 {
     constructor(first, owner) {
         this.first = first;
         this.owner = owner;
@@ -7,7 +7,7 @@ class FurredAnimals {
         return this.first + " è il ";
     }
 }
-class Dogs extends FurredAnimals {
+class Dog2 extends FurredAnimal2 {
     constructor(first, owner, razza) {
         super(first, owner);
         this.razza = razza;
@@ -16,7 +16,7 @@ class Dogs extends FurredAnimals {
         return super.brush() + "cane di " + this.owner + " ed è un " + this.razza + ", quindi verrà spazzolato come un cane.";
     }
 }
-class Cats extends FurredAnimals {
+class Cat2 extends FurredAnimal2 {
     constructor(first, owner, razza) {
         super(first, owner);
         this.razza = razza;
@@ -25,7 +25,7 @@ class Cats extends FurredAnimals {
         return super.brush() + "gatto di " + this.owner + " ed è un " + this.razza + ", quindi verrà spazzolato come un gatto.";
     }
 }
-class Toys {
+class Toy {
     constructor(first, owner) {
         this.first = first;
         this.owner = owner;
@@ -34,7 +34,7 @@ class Toys {
         return this.first + " è il giocattolo di " + this.owner;
     }
 }
-class TeddyBear extends Toys {
+class TeddyBear extends Toy {
     constructor(first, owner, usura) {
         super(first, owner);
         this.usura = usura;
@@ -43,16 +43,16 @@ class TeddyBear extends Toys {
         return super.brush() + " che è stato usato per " + this.usura + " anni, verrà spazzolato come un giocattolo.";
     }
 }
-let a1 = new Dogs("Ciccio", "Francesco", "alano");
-let b1 = new Cats("Romilda", "Giosuè", "persiano");
-let c1 = new Dogs("Roger", "Giovanni", "Golden Retriver");
+let a1 = new Dog2("Ciccio", "Francesco", "alano");
+let b1 = new Cat2("Romilda", "Giosuè", "persiano");
+let c1 = new Dog2("Roger", "Giovanni", "Golden Retriver");
 let d1 = new TeddyBear("Peter", "Brian", 3);
-let g1 = new Dogs("Amedeo", "Luigia", "bassotto");
+let e1 = new Cat2("Palla", "Antonio", "persiano");
 let f1 = new TeddyBear("Richard", "luca", 8);
-let e1 = new Cats("Palla", "Antonio", "persiano");
-let h1 = new Dogs("Cristoforo", "Giampaolo", "pastore tedesco");
-let brushable = [a1, b1, c1, d1, e1, f1, g1, h1];
-brushable.forEach((br) => {
+let g1 = new Dog2("Amedeo", "Luigia", "bassotto");
+let h1 = new Dog2("Cristoforo", "Giampaolo", "pastore tedesco");
+let Brushable = [a1, b1, c1, d1, e1, f1, g1, h1];
+Brushable.forEach((br) => {
     console.log(br.brush());
 });
 //# sourceMappingURL=brushable.js.map

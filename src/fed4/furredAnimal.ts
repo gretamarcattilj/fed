@@ -12,7 +12,7 @@ class FurredAnimal {
 }
 
 class Dog extends FurredAnimal {
-    razza: string;
+    razza: string; // non va tanto bene mettere due proprietà con lo stesso nome in due classi diverse RICORDATELO! 
     constructor(first: string, owner: string, razza: string) {
         super(first, owner);
         this.razza = razza;

@@ -2,7 +2,7 @@ interface Brushable {
     brush(): string;
 }
 
-class FurredAnimals implements Brushable {
+class FurredAnimal2 {
     first: string;
     owner: string;
 
@@ -15,7 +15,7 @@ class FurredAnimals implements Brushable {
     }
 }
 
-class Dogs extends FurredAnimals {
+class Dog2 extends FurredAnimal2 implements Brushable {
     razza: string;
     constructor(first: string, owner: string, razza: string) {
         super(first, owner);
@@ -26,7 +26,7 @@ class Dogs extends FurredAnimals {
     }
 }
 
-class Cats extends FurredAnimals {
+class Cat2 extends FurredAnimal2 implements Brushable {
     razza: string;
     constructor(first: string, owner: string, razza: string) {
         super(first, owner);
@@ -37,7 +37,7 @@ class Cats extends FurredAnimals {
     }
 }
 
-class Toys {
+class Toy {
     first: string;
     owner: string;
 
@@ -50,7 +50,7 @@ class Toys {
     }
 }
 
-class TeddyBear extends Toys {
+class TeddyBear extends Toy implements Brushable {
     usura: number;
     constructor(first: string, owner: string, usura: number) {
         super(first, owner);
@@ -61,16 +61,16 @@ class TeddyBear extends Toys {
     }
 }
 
-let a1 = new Dogs("Ciccio", "Francesco", "alano");
-let b1 = new Cats("Romilda", "Giosuè", "persiano");
-let c1 = new Dogs("Roger", "Giovanni", "Golden Retriver");
+let a1 = new Dog2("Ciccio", "Francesco", "alano");
+let b1 = new Cat2("Romilda", "Giosuè", "persiano");
+let c1 = new Dog2("Roger", "Giovanni", "Golden Retriver");
 let d1 = new TeddyBear("Peter", "Brian", 3);
-let g1 = new Dogs("Amedeo", "Luigia", "bassotto");
+let e1 = new Cat2("Palla", "Antonio", "persiano");
 let f1 = new TeddyBear("Richard", "luca", 8);
-let e1 = new Cats("Palla", "Antonio", "persiano");
-let h1 = new Dogs("Cristoforo", "Giampaolo", "pastore tedesco");
+let g1 = new Dog2("Amedeo", "Luigia", "bassotto");
+let h1 = new Dog2("Cristoforo", "Giampaolo", "pastore tedesco");
 
-let brushable = [a1, b1, c1, d1, e1, f1, g1, h1];
-brushable.forEach((br) => {
+let Brushable = [a1, b1, c1, d1, e1, f1, g1, h1];
+Brushable.forEach((br) => {
     console.log(br.brush());
 });
