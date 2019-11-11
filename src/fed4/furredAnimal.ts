@@ -7,7 +7,7 @@ class FurredAnimal {
         this.owner = owner;
     }
     brush(): string {
-        return this.first + " è l'animale di " + this.owner;
+        return this.first + " è il ";
     }
 }
 
@@ -18,7 +18,7 @@ class Dog extends FurredAnimal {
         this.razza = razza;
     }
     brush(): string {
-        return super.brush() + " e la sua razza è " + this.razza + ", quindi verrà spazzolato come un cane";
+        return super.brush() + "cane di " + this.owner + " ed è un " + this.razza + ", quindi verrà spazzolato come un cane.";
     }
 }
 
@@ -29,7 +29,7 @@ class Cat extends FurredAnimal {
         this.razza = razza;
     }
     brush(): string {
-        return super.brush() + " e la sua razza è " + this.razza + ", quindi verrà spazzolato come un gatto";
+        return super.brush() + "gatto di " + this.owner + " ed è un " + this.razza + ", quindi verrà spazzolato come un gatto.";
     }
 }
 
