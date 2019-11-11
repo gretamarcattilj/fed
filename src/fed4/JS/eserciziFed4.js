@@ -33,6 +33,7 @@ console.log(s.has(5));
 console.log(s.has(8));
 b = s.values();
 console.log(b);
+console.log(s.size);
 
 let m = new Map([[1, 2], [2, 4], ["tu", "ok"]]);
 console.log(m);
