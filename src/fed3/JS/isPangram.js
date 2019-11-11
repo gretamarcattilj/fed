@@ -23,8 +23,10 @@ function isPangram(str) {
     return true;
 }
 
-console.log(isPangram("Qui gli ampi stronzi, bove, defechi?"));
-console.log(isPangram("i topi non avevano nipoti"));
-console.log(isPangram("Pranzo d'acqua fa volti sghembi"));
-console.log(isPangram("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"));
-console.log(isPangram(56));
+console.log(isPangram("Qui gli ampi stronzi, bove, defechi?")===true);
+console.log(isPangram("i topi non avevano nipoti")===false);
+console.log(isPangram("Pranzo d'acqua fa volti sghembi")===true);
+console.log(isPangram("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")===false);
+console.log(isPangram(56)===undefined);
+console.log(isPangram(true)===undefined);
+console.log(isPangram("true")===false);
