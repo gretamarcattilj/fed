@@ -4,7 +4,7 @@ function hamming(left: string, right: string): number {
         throw "stringhe di lunghezza diversa"
     }
 
-    let cont = 0;
+    let cont: number = 0;
     for (let i = 0; i < left.length; i++) {
         if (left[i] !== right[i]) {
             cont += 1;
