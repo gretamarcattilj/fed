@@ -12,7 +12,7 @@ function hamming(left: string, right: string): number {
     }
 
     return cont;
-    
+
 }
 
 try {
