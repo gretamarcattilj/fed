@@ -255,23 +255,210 @@ function dateNbDays(a0, a, p) {
 }
 console.log(dateNbDays(4281, 5087, 2));
 function foldArray(array, runs) {
-    let aux = array;
+    let aux;
     for (let i = 0; i < runs; i++) {
-        aux = Array(Math.ceil(array.length / 2));
+        aux = new Array(Math.ceil(array.length / 2));
         for (let j = 0; j < aux.length; j++) {
             aux[j] = array[j];
         }
         for (let j = 0; j < Math.floor(array.length / 2); j++) {
-            if (j === array.length - j - 1) {
-                aux[j] = array[j];
-            }
-            else {
-                aux[j] = array[j] + array[array.length - j - 1];
-            }
+            aux[j] = array[j] + array[array.length - j - 1];
         }
         array = aux;
     }
     return aux;
 }
-console.log(foldArray([1, 2, 3, 4, 5, 6], 2));
+console.log(foldArray([1, 2, 3, 4, 5], 1));
+function getSum(a, b) {
+    let sum;
+    if (a == b) {
+        return a;
+    }
+    if (a < b) {
+        sum = a;
+        while (a + 1 <= b) {
+            sum += a + 1;
+            a = a + 1;
+        }
+    }
+    if (a > b) {
+        sum = b;
+        while (b + 1 <= a) {
+            sum += b + 1;
+            b = b + 1;
+        }
+    }
+    return sum;
+}
+console.log(getSum(0, -1));
+function sendMessage(message) {
+    let aux = { " ": ["0", " "], "a": ["2", 2], "b": ["22", 2], "c": ["222", 2], "d": ["3", 3], "e": ["33", 3], "f": ["333", 3], "g": ["4", 4], "h": ["44", 4], "i": ["444", 4], "j": ["5", 5], "k": ["55", 5], "l": ["555", 5], "m": ["6", 6], "n": ["66", 6], "o": ["666", 6], "p": ["7", 7], "q": ["77", 7], "r": ["777", 7], "s": ["7777", 7], "t": ["8", 8], "u": ["88", 8], "v": ["888", 8], "w": ["9", 9], "x": ["99", 9], "y": ["999", 9], "z": ["9999", 9], ".": ["1", 1], ",": ["11", 1], "?": ["111", 1], "!": ["1111", 1], "'": ["*", "*"], "-": ["**", "*"], "+": ["***", "*"], "=": ["****", "*"] };
+    let result = "";
+    let remember;
+    let num = false;
+    for (let i = 0; i < message.length; i++) {
+        if (message[i] == " ") {
+            if (aux[message[i]] !== undefined) {
+                result += aux[message[i]][0];
+                remember = aux[message[i]][0];
+            }
+        }
+        else if (message[i] >= "0" && message[i] <= "9") {
+            result += message[i];
+            result += "-";
+            remember = "-";
+        }
+        else if (message[i] >= "A" && message[i] <= "Z") {
+            if (aux[message[i].toLowerCase()] !== undefined) {
+                if (i >= 1 && aux[message[i].toLowerCase()][1] === remember) {
+                    result += " ";
+                    remember = "_";
+                }
+                if (num === false) {
+                    result += "#";
+                    num = true;
+                }
+                result += aux[message[i].toLowerCase()][0];
+                remember = aux[message[i].toLowerCase()][1];
+            }
+        }
+        else {
+            if (aux[message[i]] !== undefined) {
+                if (num === true && message[i] >= "a" && message[i] <= "z") {
+                    result += "#";
+                    num = false;
+                    remember = "#";
+                }
+                if (i >= 1 && aux[message[i].toLowerCase()][1] === remember) {
+                    result += " ";
+                    remember = "_";
+                }
+                result += aux[message[i]][0];
+                remember = aux[message[i]][1];
+            }
+        }
+    }
+    return result;
+}
+console.log(sendMessage("y1mpo-ZK!ZF.,ORLbnK2W8,Lip0-"));
+console.log(sendMessage("Def Con 1!"));
+console.log(sendMessage("hey"));
+function wave(str) {
+    str = str.toLowerCase();
+    let aux = "";
+    let cont = 0;
+    let cont2 = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === " ") {
+            continue;
+        }
+        else {
+            cont += 1;
+        }
+    }
+    let result = new Array(cont);
+    cont = 0;
+    while (cont < str.length) {
+        if (str[cont] === " ") {
+            cont += 1;
+            cont2 += 1;
+        }
+        else {
+            for (let i = 0; i < str.length; i++) {
+                if (i === cont) {
+                    aux += str[i].toUpperCase();
+                }
+                else {
+                    aux += str[i];
+                }
+            }
+            result[cont - cont2] = aux;
+            cont += 1;
+            aux = "";
+        }
+    }
+    return result;
+}
+console.log(wave("tu tu"));
+function posAverage(s) {
+    let vect = s.split(", ");
+    let cont = 0;
+    let norm = 0;
+    for (let i = 0; i < vect.length--; i++) {
+        for (let j = i + 1; j < vect.length; j++) {
+            for (let k = 0; k < vect[0].length; k++) {
+                norm += 1;
+                if (vect[i][k] === vect[j][k]) {
+                    cont += 1;
+                }
+            }
+        }
+    }
+    return (cont * 100 / norm);
+}
+function pyramid(n) {
+    if (n == 0) {
+        return [];
+    }
+    if (n == 1) {
+        return [[1]];
+    }
+    let result;
+    let aux = [1];
+    result = new Array(n);
+    result = [[1]];
+    for (let i = 1; i < n; i++) {
+        for (let j = 1; j <= i; j++) {
+            aux.push(1);
+        }
+        result.push(aux);
+        aux = [1];
+    }
+    return result;
+}
+console.log(pyramid(3));
+function sumTriangularNumbers(n) {
+    let sum = 1;
+    let add = 1;
+    let previuos = 1;
+    for (let i = 1; i <= n; i++) {
+        add += 1;
+        sum += previuos + add;
+        previuos = previuos + add;
+    }
+    return sum;
+}
+console.log(sumTriangularNumbers(6));
+function rowSumOddNumbers(n) {
+    let sum = n * (n - 1) + 1;
+    let add = n * (n - 1) + 1;
+    for (let i = 1; i < n; i++) {
+        add += 2;
+        sum += add;
+    }
+    return sum;
+}
+console.log(rowSumOddNumbers(2));
+function balancedNum(number) {
+    let str = number.toString();
+    let n = str.length;
+    let aux = 0;
+    if (number % 2 === 1) {
+        for (let i = 0; i < Math.floor(n / 2); i++) {
+            aux += Number(str[i]);
+            aux -= Number(str[n - i - 1]);
+        }
+    }
+    else {
+        for (let i = 0; i < (n / 2) - 1; i++) {
+            aux += Number(str[i]);
+            aux -= Number(str[n - i - 1]);
+        }
+    }
+    if (aux === 0) {
+        return "Balanced";
+    }
+    return "Not Balanced";
+}
+console.log(balancedNum(41418333));
 //# sourceMappingURL=proveCodewars.js.map
