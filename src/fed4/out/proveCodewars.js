@@ -443,7 +443,7 @@ function balancedNum(number) {
     let str = number.toString();
     let n = str.length;
     let aux = 0;
-    if (number % 2 === 1) {
+    if (n % 2 === 1) {
         for (let i = 0; i < Math.floor(n / 2); i++) {
             aux += Number(str[i]);
             aux -= Number(str[n - i - 1]);
