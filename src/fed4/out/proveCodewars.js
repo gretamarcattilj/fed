@@ -704,5 +704,17 @@ function divisibleByFive(str) {
         return false;
     }
 }
-console.log(divisibleByFive("111"));
+console.log(divisibleByFive("101"));
+function toAlternatingCase(s) {
+    let result = "";
+    for (let i = 0; i < s.length;) {
+        if (s[i] === s[i].toUpperCase()) {
+            result += s[i].toLowerCase();
+        }
+        else {
+            result += s[i].toUpperCase();
+        }
+    }
+    return result;
+}
 //# sourceMappingURL=proveCodewars.js.map
