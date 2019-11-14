@@ -456,3 +456,265 @@ function balancedNum(number: number) {
 }
 
 console.log(balancedNum(41418333));
+
+function save(sizes: number[], hd: number): number {
+    let sum: number = 0;
+    let cont: number = 0;
+    for (let i = 0; i < sizes.length; i++) {
+        sum += sizes[i];
+        if (sum > hd) {
+            return cont;
+        }
+        cont += 1;
+    }
+    return cont;
+}
+
+function findOdd(xs: number[]): number {
+    let cont: number = 1;
+    for (let i = 0; i < xs.length; i++) {
+        for (let j = 0; j < xs.length; j++) {
+            if (i === j) {
+                continue;
+            } else {
+                if (xs[i] === xs[j]) {
+                    cont += 1;
+                }
+            }
+        }
+        if (cont % 2 === 1) {
+            return xs[i];
+        } else {
+            cont = 1;
+        }
+    }
+}
+
+console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));
+console.log(findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]));
+console.log(findOdd([20, 1, 1, 2, 2, 3, 3, 5, 5, 4, 20, 4, 5]));
+console.log(findOdd([10]));
+console.log(findOdd([1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1]));
+console.log(findOdd([5, 4, 3, 2, 1, 5, 4, 3, 2, 10, 10]));
+
+function solution(n: number) {
+    let sum: number = 0;
+    for (let i = 1; i < n; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+            sum += i;
+        }
+    }
+    return sum;
+}
+
+console.log(solution(10));
+
+function spinWords(words: string) {
+    let result: string = "";
+    let aux: string[] = words.split(" ");
+    let auxStr: string = "";
+    for (let i = 0; i < aux.length; i++) {
+        if (aux[i].length >= 5) {
+            for (let j = aux[i].length - 1; j >= 0; j--) {
+                auxStr += aux[i][j];
+            }
+            aux[i] = auxStr;
+        }
+    }
+    result = aux.join(" ");
+    return result;
+}
+
+function findMissingLetter(array: string[]): string {
+    let result: string = "";
+    let x: number = array[0].charCodeAt(0);
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === String.fromCharCode(x + i)) {
+            continue;
+        } else {
+            return String.fromCharCode(x + i);
+        }
+    }
+    throw "non dovevi arrivare qui"
+}
+
+function camelCase(str: string): string {
+    let aux: string[] = str.split(" ");
+    let auxStr: string = "";
+    for (let i = 0; i < aux.length; i++) {
+        for (let j = 0; j < aux[i].length; j++) {
+            if (j === 0) {
+                auxStr += aux[i][j].toUpperCase();
+            } else {
+                auxStr += aux[i][j];
+            }
+        }
+        aux[i] = auxStr;
+        auxStr = "";
+    }
+    auxStr = aux.join("");
+    return auxStr;
+}
+
+console.log(camelCase("test case"));
+
+function backwardsPrime(start: number, stop: number): number[] {
+    let auxStr = "";
+    let auxStrRev = "";
+    let result: number[] = [];
+    for (let i = start; i <= stop; i++) {
+        if (i.toString().length === 1) {
+            continue;
+        } else {
+            auxStr = i.toString();
+            for (let j = auxStr.length - 1; j >= 0; j--) {
+                auxStrRev += auxStr[j];
+            }
+            let num: number = Number(auxStrRev);
+            if (isPrime(i) && isPrime(num) && auxStrRev !== auxStr) {
+                result.push(i);
+            }
+            auxStrRev = "";
+        }
+    }
+    return result;
+}
+
+function isPrime(n: number) {
+    for (let j = 2; j <= Math.sqrt(n); j++) {
+        if (n % j === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(backwardsPrime(70000, 70245));
+console.log(backwardsPrime(2, 100));
+
+function iqTest(numbers: string): number {
+    let contP: number = 0;
+    let contD: number = 0;
+    let aux: string[] = numbers.split(" ");
+    for (let i = 0; i < aux.length; i++) {
+        if (Number(aux[i]) % 2 == 0) {
+            contP += 1;
+        } else {
+            contD += 1;
+        }
+    }
+    if (contP == 1) {
+        for (let i = 0; i < aux.length; i++) {
+            if (Number(aux[i]) % 2 == 0) {
+                return i + 1;
+            }
+        }
+    } else {
+        for (let i = 0; i < aux.length; i++) {
+            if (Number(aux[i]) % 2 == 1) {
+                return i + 1;
+            }
+        }
+    }
+    throw "non saresti dovuto arrivare qui";
+}
+
+function digPow(n: number, p: number) {
+    let auxNum: number = 0;
+    let aux: string = n.toString();
+    let l: number = aux.length;
+    for (let i = l - 1; i >= 0; i--) {
+        auxNum += Number(aux[i]) ** (p + i);
+    }
+    if (auxNum % n == 0) {
+        return auxNum / n;
+    } else {
+        return -1;
+    }
+}
+
+//console.log(digPow(89, 1));
+//console.log(isPrime(4));
+function numPrimorial(n: number) {
+    let cont: number = 0;
+    let num: number = 2;
+    let result: number = 1;
+    while (cont < n) {
+        if (isPrime(num)) {
+            result *= num;
+            cont += 1;
+        }
+        num += 1;
+    }
+    return result;
+}
+function isPrime(n: number) {
+    for (let j = 2; j <= Math.sqrt(n); j++) {
+        if (n % j === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(numPrimorial(5));
+
+function sumOfIntervals(intervals: [number, number][]) {
+    let sum: number = 0;
+    intervals.sort((a, b) => {
+        if (a[0] > b[0]) {
+            return 1;
+        } else if (a[0] < b[0]) {
+            return -1;
+        } else {
+            if (a[1] > b[1]) {
+                return 1;
+            } else if (a[1] < b[1]) {
+                return -1;
+            } else {
+                return 0;
+            }
+        }
+    })
+    let remember: number = intervals[0][0];
+    for (let i = 0; i < intervals.length; i++) {
+        if (intervals[i][0] >= remember) {
+            sum += intervals[i][1] - intervals[i][0];
+            remember = intervals[i][1]
+        } else {
+            sum += intervals[i][1] - remember;
+            remember = intervals[i][1];
+        }
+    }
+    return sum;
+}
+
+console.log(sumOfIntervals([[1, 5], [1, 1]]));
+console.log(sumOfIntervals([[1, 5], [10, 15], [-1, 1]]));
+console.log(sumOfIntervals([[1, 5], [10, 15], [-1, 3]]));
+
+function divisibleByFive(str: string): boolean {
+    let sum: number = 0;
+    for (let i = str.length - 1; i >= 0; i--) {
+        sum += Number(str[i]) * (2 ** i);
+    }
+    if (sum % 5 == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(divisibleByFive("101"));
+
+function toAlternatingCase(s: string): string {
+    let result: string = "";
+    for (let i = 0; i < s.length) {
+        if (s[i] === s[i].toUpperCase()) {
+            result += s[i].toLowerCase();
+        } else {
+            result += s[i].toUpperCase();
+        }
+    }
+    return result;
+}

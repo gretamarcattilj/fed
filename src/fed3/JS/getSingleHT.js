@@ -17,3 +17,4 @@ function getSingleHT(data) {
 
 console.log(getSingleHT([1, 2, 4, 3, 5, 2, 5, 3, 6, 4, 1]));
 console.log(getSingleHT([1, 2, 4, 3, 5, 2, 5, 3, 6, 4, 1, 3, 12, 7, 12, 7, 7]));
+
