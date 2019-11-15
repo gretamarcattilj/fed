@@ -45,36 +45,10 @@ console.log(sumOfIntervals([[1, 5], [1, 1]]));
 console.log(sumOfIntervals([[1, 5], [10, 15], [-1, 1]]));
 console.log(sumOfIntervals([[1, 5], [10, 15], [-1, 3]]));
 function josephusSurvivor(n, k) {
-    let aux = "";
-    for (let i = 0; i < n; i++) {
-        aux += (i + 1).toString();
-    }
-    let cont = 0;
-    let aux2 = 0;
-    let auxLeft = "";
-    let auxRight = "";
-    while (aux.length > 1) {
-        if ((cont + k - 1) < aux.length) {
-            cont += (k - 1);
-        }
-        else {
-            let cond = false;
-            while (!cond) {
-                aux2 = aux.length - cont;
-                cont = k - aux2 - 1;
-                if (cont < aux.length) {
-                    cond = true;
-                }
-                else {
-                    cont = (k - 1) % cont;
-                }
-            }
-        }
-        auxLeft = aux.slice(0, cont);
-        auxRight = aux.slice(cont + 1, aux.length);
-        aux = auxLeft + auxRight;
-    }
-    return aux;
+    let i = 1;
+    for (let j = 1; j <= n; j++)
+        i = (i + k) % j;
+    return i + 1;
 }
 console.log(josephusSurvivor(11, 19));
 console.log(josephusSurvivor(7, 3));
