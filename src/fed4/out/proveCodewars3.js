@@ -52,4 +52,19 @@ function josephusSurvivor(n, k) {
 }
 console.log(josephusSurvivor(11, 19));
 console.log(josephusSurvivor(7, 3));
+function dblLinear(n) {
+    let aux = [1];
+    let new1 = 0;
+    let new2 = 0;
+    let cont = 0;
+    while (aux.length < n + 1) {
+        new1 = 2 * (aux[cont]) + 1;
+        new2 = 3 * (aux[cont]) + 1;
+        aux.push(new1);
+        aux.push(new2);
+        cont += 1;
+    }
+    return aux[n + 1];
+}
+console.log(dblLinear(10));
 //# sourceMappingURL=proveCodewars3.js.map

@@ -43,8 +43,25 @@ console.log(sumOfIntervals([[1, 5], [10, 15], [-1, 3]]));
 function josephusSurvivor(n: number, k: number) {
     let i = 1;
     for (let j = 1; j <= n; j++)
-      i = (i + k) % j;
+        i = (i + k) % j;
     return i + 1;
 }
 console.log(josephusSurvivor(11, 19));
 console.log(josephusSurvivor(7, 3));
+
+function dblLinear(n) {
+    let aux: number[] = [1];
+    let new1: number = 0;
+    let new2: number = 0;
+    let cont: number = 0;
+    while (aux.length < n + 1) {
+        new1 = 2 * (aux[cont]) + 1;
+        new2 = 3 * (aux[cont]) + 1;
+        aux.push(new1);
+        aux.push(new2);
+        cont += 1;
+    }
+    return aux[n + 1];
+}
+
+console.log(dblLinear(10));
