@@ -579,14 +579,6 @@ function backwardsPrime(start, stop) {
     }
     return result;
 }
-function isPrime(n) {
-    for (let j = 2; j <= Math.sqrt(n); j++) {
-        if (n % j === 0) {
-            return false;
-        }
-    }
-    return true;
-}
 console.log(backwardsPrime(70000, 70245));
 console.log(backwardsPrime(2, 100));
 function iqTest(numbers) {
@@ -707,7 +699,7 @@ function divisibleByFive(str) {
 console.log(divisibleByFive("101"));
 function toAlternatingCase(s) {
     let result = "";
-    for (let i = 0; i < s.length;) {
+    for (let i = 0; i < s.length; i++) {
         if (s[i] === s[i].toUpperCase()) {
             result += s[i].toLowerCase();
         }

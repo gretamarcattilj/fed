@@ -580,15 +580,6 @@ function backwardsPrime(start: number, stop: number): number[] {
     return result;
 }
 
-function isPrime(n: number) {
-    for (let j = 2; j <= Math.sqrt(n); j++) {
-        if (n % j === 0) {
-            return false;
-        }
-    }
-    return true;
-}
-
 console.log(backwardsPrime(70000, 70245));
 console.log(backwardsPrime(2, 100));
 
@@ -709,7 +700,7 @@ console.log(divisibleByFive("101"));
 
 function toAlternatingCase(s: string): string {
     let result: string = "";
-    for (let i = 0; i < s.length) {
+    for (let i = 0; i < s.length; i++) {
         if (s[i] === s[i].toUpperCase()) {
             result += s[i].toLowerCase();
         } else {
