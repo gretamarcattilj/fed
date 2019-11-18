@@ -61,6 +61,13 @@ function dblLinear(n) {
         aux.push(new2);
         cont += 1;
     }
+    aux.sort((a, b) => {
+        if (a > b) {
+            return 1;
+        } else if (a < b) {
+            return -1;
+        } else { return 0; }
+    })
     return aux[n + 1];
 }
 
