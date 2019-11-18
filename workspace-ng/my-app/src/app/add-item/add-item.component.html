@@ -1,0 +1,16 @@
+<form>
+    <h3>Add item</h3>
+    <div>
+        <label for="id">GUID:</label>
+        <input name="id" #id>
+    </div>
+    <div>
+        <label for="name">Name:</label>
+        <input name="name" #name>
+    </div>
+    <div>
+        <button (click)="add(id, name);">
+            OK
+        </button>
+    </div>
+</form>
