@@ -51,7 +51,7 @@ function dblLinear(n) {
     let new1 = 0;
     let new2 = 0;
     let cont = 0;
-    while (aux.length < 2 * n) {
+    while (aux.length < 3 * n / 2) {
         new1 = 2 * (aux[cont]) + 1;
         new2 = 3 * (aux[cont]) + 1;
         aux.push(new1);
