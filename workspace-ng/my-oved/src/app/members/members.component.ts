@@ -16,14 +16,15 @@ export class MembersComponent implements OnInit {
   }
   onChange(id: HTMLSelectElement) {
     let oved: string = id.value;
+    document.bgColor=oved;
     if (oved == "red") {
-      this.members = ["alberto", "greta", "maurizio"];
+      this.members = ["Alberto Rampin", "Greta Marcattilj", "Maurizio Fusetti"];
     } else if (oved == "blue") {
-      this.members = ["aurora", "luca", "marianna"];
+      this.members = ["Aurora Perucci", "Luca Naggi", "Marianna Viola"];
     } else if (oved == "green") {
-      this.members = ["yun", "marco", "nadia", "nigel"];
+      this.members = ["Yun Uhu", "Marco Canepa", "Nadia Poli", "Nigel Losi"];
     } else {
-      this.members = ["jacopo", "marco", "roberta"];
+      this.members = ["Jacopo Martinez", "Marco Raschillà", "Roberta Cramarossa"];
     }
   }
 

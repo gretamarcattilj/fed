@@ -1,9 +1,12 @@
-<select name="option" #id (change)="onChange(id);">
-    <option *ngFor="let group of groups">{{ group }}</option>
-</select>
-
-<ul>
-    <li *ngFor="let member of members">
-        <app-member [member]="member"></app-member>
-    </li>
-</ul>
+<div id=centrare>
+    <select name="option" #id (change)="onChange(id);">
+        <option *ngFor="let group of groups">{{ group }}</option>
+    </select>
+</div>
+<div id="lista">
+    <ul id="listaDentro">
+        <li *ngFor="let member of members">
+            <app-member [member]="member"></app-member>
+        </li>
+    </ul>
+</div>
