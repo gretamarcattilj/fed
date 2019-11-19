@@ -1,0 +1,37 @@
+<div id="centra">
+    <div id=centrare>
+        <select name="option" #colore (change)="assegna(colore);">
+            <option *ngFor="let group of groups">{{ group }}</option>
+        </select>
+    </div>
+    <div [ngSwitch]="colore2">
+        <span *ngSwitchCase="'red'">
+            <ul>
+                <li *ngFor="let persona of personeRed">
+                    {{persona}}
+                </li>
+            </ul>
+        </span>
+        <span *ngSwitchCase="'blue'">
+            <ul>
+                <li *ngFor="let persona of personeBlue">
+                    {{persona}}
+                </li>
+            </ul>
+        </span>
+        <span *ngSwitchCase="'green'">
+            <ul>
+                <li *ngFor="let persona of personeGreen">
+                    {{persona}}
+                </li>
+            </ul>
+        </span>
+        <span *ngSwitchCase="'yellow'">
+            <ul>
+                <li *ngFor="let persona of personeYellow">
+                    {{persona}}
+                </li>
+            </ul>
+        </span>
+    </div>
+</div>
