@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-members',
@@ -6,10 +6,25 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./members.component.css']
 })
 export class MembersComponent implements OnInit {
- 
-  constructor() { }
+  groups: string[];
+  members: string[];
+  constructor() {
+    this.groups = ["red", "blue", "green", "yellow"];
+  }
 
   ngOnInit() {
+  }
+  onChange(id: HTMLSelectElement) {
+    let oved: string = id.value;
+    if (oved == "red") {
+      this.members = ["alberto", "greta", "maurizio"];
+    } else if (oved == "blue") {
+      this.members = ["aurora", "luca", "marianna"];
+    } else if (oved == "green") {
+      this.members = ["yun", "marco", "nadia", "nigel"];
+    } else {
+      this.members = ["jacopo", "marco", "roberta"];
+    }
   }
 
 }
