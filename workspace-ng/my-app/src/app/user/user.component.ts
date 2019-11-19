@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { User } from '../user.model';
 
 @Component({
   selector: 'app-user',
@@ -6,11 +7,20 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  @Input() name: string[];
-  constructor() {
+  @Input() user: User;
+  @Output() liked: EventEmitter<User>;
+
+  constructor() { 
+    this.liked = new EventEmitter(); 
   }
 
-  ngOnInit() {
+  ngOnInit() { 
+
   }
 
+  plusOne() {
+    this.user.likes += 1;
+    this.liked.emit(this.user);
+  }
+  
 }
