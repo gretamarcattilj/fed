@@ -69,7 +69,16 @@ function dblLinear(n) {
             return 0;
         }
     });
-    return aux[n];
+    let auxFinale = [aux[0]];
+    for (let i = 1; i < aux.length; i++) {
+        if (aux[i] == aux[i - 1]) {
+            continue;
+        }
+        else {
+            auxFinale.push(aux[i]);
+        }
+    }
+    return auxFinale[n];
 }
-console.log(dblLinear(10));
+console.log(dblLinear(30));
 //# sourceMappingURL=proveCodewars3.js.map

@@ -68,7 +68,15 @@ function dblLinear(n) {
             return -1;
         } else { return 0; }
     })
-    return aux[n];
+    let auxFinale: number[] = [aux[0]];
+    for (let i = 1; i < aux.length; i++) {
+        if (aux[i] == aux[i - 1]) {
+            continue;
+        } else {
+            auxFinale.push(aux[i]);
+        }
+    }
+    return auxFinale[n];
 }
 
-console.log(dblLinear(10));
+console.log(dblLinear(30));
