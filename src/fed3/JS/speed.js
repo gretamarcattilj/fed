@@ -17,3 +17,14 @@ console.log(Boolean(speed(2, 0.5)) === true);
 console.log(Boolean(speed(2.4, 3)) === true);
 console.log(Boolean(speed(2, Infinity)) === false);
 console.log(Boolean(speed(Infinity, 2)) === true);
+
+
+function increment(a) {
+    for (let i = 0; i < a.length; i++) {
+        a[i] += 1;
+    }
+    return a; 
+} 
+
+let a=[1,3,7];
+console.log(increment(a));
