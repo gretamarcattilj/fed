@@ -20,9 +20,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 import { PricePipe } from './pipes/price.pipe';
 import { InsertModelComponent } from './insert-model/insert-model.component';
-import { SerachModelsComponent } from './serach-models/serach-models.component';
-import { ShowModelsComponent } from './show-models/show-models.component';
 import { SearchModelsComponent } from './search-models/search-models.component';
+import { ShowModelsComponent } from './show-models/show-models.component';
 
 @NgModule({
   declarations: [
@@ -40,9 +39,8 @@ import { SearchModelsComponent } from './search-models/search-models.component';
     PageNotFoundComponent,
     PricePipe,
     InsertModelComponent,
-    SerachModelsComponent,
-    ShowModelsComponent,
-    SearchModelsComponent
+    SearchModelsComponent,
+    ShowModelsComponent
   ],
   imports: [
     BrowserModule,
