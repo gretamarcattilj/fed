@@ -1,0 +1,12 @@
+<h1>Animal Reactive Form</h1>
+<form [formGroup]="fAnimal">
+    <div>
+        <label for="name">Name</label>
+        <input formControlName="name">
+    </div>
+    <div>
+        <label for="weight">Weight</label>
+        <input type="number" formControlName="weight">
+    </div>
+    <button (click)="submit(fAnimal.value);">Submit</button>
+</form>

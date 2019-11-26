@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user.model';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-users',
@@ -10,12 +11,12 @@ import { User } from '../user.model';
 export class UsersComponent implements OnInit {
   users: Array<User>;
 
-  constructor() {
-    this.users = [new User('Tom', 2), new User('Bob', 1), new User('Sid', 3)];
+  constructor(us: UsersService) {
+    this.users = us.get();
   }
 
-  ngOnInit() { 
-    
+  ngOnInit() {
+
   }
 
   moreLikes(user: User) {

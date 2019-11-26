@@ -1,0 +1,12 @@
+<h1>Animal Form</h1>
+<form #animalForm="ngForm">
+    <div>
+        <label for="name">Name</label>
+        <input id="name" required [(ngModel)]="friend.name" name="name">
+    </div>
+    <div>
+        <label for="weight">Weight</label>
+        <input type="number" id="weight" [(ngModel)]="friend.weight" name="weight">
+    </div>
+    <button (click)="submit();">Submit</button>
+</form>
