@@ -3,6 +3,10 @@ import { ModelDataService } from '../model/model-data.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UpdateResult } from '../model/update-result';
+import { Marca } from '../model/brand';
+import { QueryResult } from '../model/query-result';
+import { BrandDataService } from '../model/brand-data.service';
+
 
 @Component({
   selector: 'app-insert-model',
@@ -21,7 +25,9 @@ export class InsertModelComponent implements OnInit {
   messaggio: string;
   messaggioCtrl = false;
 
-  constructor(private fm: FormBuilder, private modelSvc: ModelDataService, private modalSvc: NgbModal) { }
+  listaMarche: Array<Marca>;
+
+  constructor(private fm: FormBuilder, private modelSvc: ModelDataService, private BrandSvc: BrandDataService, private modalSvc: NgbModal) { }
 
   ngOnInit() {
     this.modelFG = this.fm.group({
@@ -44,6 +50,16 @@ export class InsertModelComponent implements OnInit {
         ])
       ]
     });
+
+    this.BrandSvc.getAllBrands()
+      .subscribe((response: any) => {
+        const queryResult: QueryResult = response;
+        this.listaMarche = queryResult.esito.marca;
+      }, (error: any) => {
+        setTimeout(() => {
+          this.messaggio = 'No brands found!<br><br>HTTP error!<br><br>' + error.message;
+        }, 7000);
+      });
   }
 
   check(element: string) {
