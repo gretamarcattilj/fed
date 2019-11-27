@@ -38,36 +38,9 @@
                     <span class="text-muted">Potenza: </span>
                     {{ modello.potenza }}
                   </li>
-                  <li class="list-group-item text-info">
-                    <ng-template #showMarca class="tool">
-                      <ng-container>
-                        <div class="card border-info">
-                          <div class="card-header">
-                            <h4 class="card-title text-secondary text-center">{{ marca }}
-                            </h4>
-                          </div>
-                        </div>
-                        <div class="card-body dim">
-                          <ul class="list-group list-group-flush text-nowrap">
-                            <li class="list-group-item text-info">
-                              <span class="text-muted">Fondazione: </span>{{ fondazione }}
-                            </li>
-                            <li class="list-group-item text-info">
-                              <span class="text-muted">Website: </span>
-                              {{ web }}
-                            </li>
-                          </ul>
-                        </div>
-                      </ng-container>
-                    </ng-template>
-                    <div>
-                      <ng-container>
-                        <span class="text-muted">Marca: </span>
-                        <a href="#" [ngbTooltip]="showMarca" placement="top" role="tooltip" class="NoButton">
-                          {{ marca }}
-                        </a>
-                      </ng-container>
-                    </div>
+                  <li class="list-group-item text-info" [ngbPopover]="showMarca">
+                    <span class="text-muted">Marca: </span>
+                    <span>{{ marca }}</span>
                   </li>
                 </ul>
               </ng-container>
@@ -80,4 +53,22 @@
       </div>
     </div>
   </div>
+  <ng-template #showMarca class="popover" role="tooltip">
+
+
+    <h3 class="popover-header">{{ marca }}
+    </h3>
+    <div class="arrow"></div>
+    <div class="popover-body">
+      <ul class="list-group list-group-flush text-nowrap">
+        <li class="list-group-item text-info">
+          <span class="text-muted">Fondazione: </span>{{ fondazione }}
+        </li>
+        <li class="list-group-item text-info">
+          <span class="text-muted">Website: </span>
+          {{ web }}
+        </li>
+      </ul>
+    </div>
+  </ng-template>
 </main>
