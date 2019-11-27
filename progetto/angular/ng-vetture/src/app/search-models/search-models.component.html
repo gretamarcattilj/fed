@@ -39,8 +39,35 @@
                     {{ modello.potenza }}
                   </li>
                   <li class="list-group-item text-info">
-                    <span class="text-muted">Marca: </span>
-                    {{ marca }}
+                    <ng-template #showMarca class="tool">
+                      <ng-container>
+                        <div class="card border-info">
+                          <div class="card-header">
+                            <h4 class="card-title text-secondary text-center">{{ marca }}
+                            </h4>
+                          </div>
+                        </div>
+                        <div class="card-body dim">
+                          <ul class="list-group list-group-flush text-nowrap">
+                            <li class="list-group-item text-info">
+                              <span class="text-muted">Fondazione: </span>{{ fondazione }}
+                            </li>
+                            <li class="list-group-item text-info">
+                              <span class="text-muted">Website: </span>
+                              {{ web }}
+                            </li>
+                          </ul>
+                        </div>
+                      </ng-container>
+                    </ng-template>
+                    <div>
+                      <ng-container>
+                        <span class="text-muted">Marca: </span>
+                        <a href="#" [ngbTooltip]="showMarca" placement="top" role="tooltip" class="NoButton">
+                          {{ marca }}
+                        </a>
+                      </ng-container>
+                    </div>
                   </li>
                 </ul>
               </ng-container>
@@ -53,32 +80,4 @@
       </div>
     </div>
   </div>
-    <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" [ngbCollapse]="isCollapsed">
-    <div class="card border-info">
-      <div class="card-header">
-        <h4 class="card-title text-secondary text-center"><b>{{modello.name}}</b>
-        </h4>
-      </div>
-      <div class="card-body dim">
-        <ng-container *ngIf="listaModelli; else errorMessage">
-            <ng-container>
-              <hr class="bg-info my-4">
-              <ul class="list-group list-group-flush text-nowrap">
-                <li class="list-group-item text-info">
-                  <span class="text-muted">Fondazione: </span>{{ fondazione }}
-                </li>
-                <li class="list-group-item text-info">
-                  <span class="text-muted">Website: </span>
-                  {{ website }}
-                </li>
-              </ul>
-            </ng-container>
-        </ng-container>
-        <ng-template #errorMessage>
-          <h5 class="text-danger" [innerHTML]="messaggio"></h5>
-        </ng-template>
-      </div>
-    </div>
-  </div>
-  </div> -->
 </main>
