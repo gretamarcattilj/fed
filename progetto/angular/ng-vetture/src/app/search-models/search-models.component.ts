@@ -20,6 +20,8 @@ export class SearchModelsComponent implements OnInit {
   listaModelli: Array<Modello>;
   modelliTrovati: number;
   marca: string;
+  web: string;
+  fondazione: number;
 
   messaggio: string;
 
@@ -44,6 +46,8 @@ export class SearchModelsComponent implements OnInit {
             .subscribe((response: any) => {
               const queryResult: QueryResult = response;
               this.marca = queryResult.esito.marca[0].nome;
+              this.fondazione = queryResult.esito.marca[0].fondazione;
+              this.web = queryResult.esito.marca[0].website;
               this.isCollapsed = false;
             }, (error: any) => {
               this.messaggio = 'HTTP error!<br><br>' + error.message;

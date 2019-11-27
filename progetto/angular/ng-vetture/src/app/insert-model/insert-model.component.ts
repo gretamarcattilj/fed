@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ModelDataService } from '../model/model-data.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -15,13 +15,11 @@ import { BrandDataService } from '../model/brand-data.service';
 })
 
 export class InsertModelComponent implements OnInit {
-  @Input() aux: string;
   modelFG: FormGroup;
 
   nomeCtrl = false;
   cilindrataCtrl = false;
   potenzaCtrl = false;
-  id_marca: number;
 
   messaggio: string;
   messaggioCtrl = false;
@@ -84,7 +82,6 @@ export class InsertModelComponent implements OnInit {
   }
 
   onSubmit(content: any) {
-    console.log("id", this.modelFG.value);
     this.modelSvc.insertModel(this.modelFG.value)
       .subscribe((response: any) => {
         const updateResult: UpdateResult = response;
