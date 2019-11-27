@@ -35,22 +35,23 @@
             <small class="text-danger" [ngStyle]="{ 'visibility': potenzaCtrl ? 'visible' : 'hidden' }">Enter a number
               (min 2 digits, max 4)</small>
           </div>
-          <div class="form-row">
-            <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-              <label for="marca">Marca:</label>
-              <select type="text" formControlName="marca" id="marca" [ngClass]="{
+
+          <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <label for="marca">Marca:</label>
+            <select type="text" id="marca" [ngClass]="{
                       'form-control mb-1': true,
                       'input-err': marcaCtrl
-                     }" required autofocus (input)="check('marca')" (blur)="check('marca')">
-                <option value="" selcted class="place">marca</option>
-                <option *ngFor="let marca of listaMarche">
-                  {{ marca.nome }}
-                </option>
-              </select>
-              <small class="text-danger" [ngStyle]="{ 'visibility': marcaCtrl ? 'visible' : 'hidden' }">Enter the Model
-                name</small>
-            </div>
+                     }" required autofocus (input)="check('marca')" (blur)="check('marca')" formControlName="idMarca"
+              class="browser-default custom-select">
+              <option value="" selcted class="place">marca</option>
+              <option *ngFor="let marca of listaMarche" value="{{marca.idMarca}}">
+                {{ marca.nome }}
+              </option>
+            </select>
+            <small class="text-danger" [ngStyle]="{ 'visibility': marcaCtrl ? 'visible' : 'hidden' }">Enter the Model
+              name</small>
           </div>
+
         </div>
         <div class="form-row">
           <div class="form-group col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
