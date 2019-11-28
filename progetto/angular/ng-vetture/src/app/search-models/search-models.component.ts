@@ -42,18 +42,23 @@ export class SearchModelsComponent implements OnInit {
           const queryResult: QueryResult = response;
           this.listaModelli = queryResult.esito.modello;
           this.modelliTrovati = this.listaModelli.length;
-          this.brandSvc.getBrandById(this.listaModelli[0].idMarca)
-            .subscribe((response: any) => {
-              const queryResult: QueryResult = response;
-              this.marca = queryResult.esito.marca[0].nome;
-              this.fondazione = queryResult.esito.marca[0].fondazione;
-              this.web = queryResult.esito.marca[0].website;
-              this.isCollapsed = false;
-            }, (error: any) => {
-              this.messaggio = 'HTTP error!<br><br>' + error.message;
-              this.isCollapsed = false;
-            });
+          console.log(this.modelliTrovati);
           this.isCollapsed = false;
+          if (this.modelliTrovati != 0) {
+            this.brandSvc.getBrandById(this.listaModelli[0].idMarca)
+              .subscribe((response: any) => {
+                const queryResult: QueryResult = response;
+                console.log(response);
+                this.marca = queryResult.esito.marca[0].nome;
+                this.fondazione = queryResult.esito.marca[0].fondazione;
+                this.web = queryResult.esito.marca[0].website;
+                this.isCollapsed = false;
+              }, (error: any) => {
+                this.messaggio = 'HTTP error!<br><br>' + error.message;
+                this.isCollapsed = false;
+              });
+            this.isCollapsed = false;
+          }
         }, (error: any) => {
           this.messaggio = 'HTTP error!<br><br>' + error.message;
           this.isCollapsed = false;

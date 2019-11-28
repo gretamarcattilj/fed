@@ -16,6 +16,8 @@ export class ShowModelsComponent implements OnInit {
 
   listaMarche: Array<Marca>;
   listaModelli: Array<Modello>;
+  marche: {} = {};
+  aux: string = "";
 
   messaggio: string;
 
@@ -45,14 +47,29 @@ export class ShowModelsComponent implements OnInit {
       .subscribe((response: any) => {
         const queryResult: QueryResult = response;
         this.listaModelli = queryResult.esito.modello;
-        this.collectionSize = this.listaModelli.length; 
-        console.log("siamo qui", this.collectionSize);
+        this.collectionSize = this.listaModelli.length;
+        if (this.collectionSize != 0) {
+          for (let i = 0; i < this.collectionSize; i++) {
+            this.brandSvc.getBrandById(this.listaModelli[i].idMarca)
+              .subscribe((response: any) => {
+                const queryResult: QueryResult = response;
+                this.aux = queryResult.esito.marca[0].nome;
+                this.marche[this.listaModelli[i].idMarca]=this.aux;
+              }, (error: any) => {
+                setTimeout(() => {
+                  this.messaggio = 'No models found!<br><br>HTTP error!<br><br>' + error.message;
+                }, 7000);
+              });
+          }
+        }
       }, (error: any) => {
         setTimeout(() => {
           this.messaggio = 'No models found!<br><br>HTTP error!<br><br>' + error.message;
         }, 7000);
       });
+
   }
+
 
   updateModel(modello: Modello, modalUpdate: any) {
     this.nuovoModello = modello;

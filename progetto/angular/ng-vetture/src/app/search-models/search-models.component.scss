@@ -11,11 +11,19 @@
     overflow: auto;
 }
 
-.NoButton{
-    background-color: white;
-    border-color: white;
+.verde{
     color: green;
 }
 
 .popover-header{color: black;
-font-weight: bold;}
+}
+
+.popover-body{
+    color: gray;
+}
+
+.popover{max-width: 80%;}
+
+.popover-body {
+    padding: 0px 0px;
+}
